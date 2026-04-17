@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-color: aqua;
+}
+
+button{
+    border: 0;
+    background-color: aqua;
+    color: rgb(81, 0, 156);
+    font-weight: bolder;
+    margin-top: 8px;
+    padding: 10px 20px;
+}
