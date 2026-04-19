@@ -2,7 +2,9 @@ body{
     margin: 0;
     padding: 13px;
     font-family: Arial, Helvetica, sans-serif;
-    
+    min-width: 400px;
+    background-color: rgb(255, 113, 113);
+    color: rgb(81, 0, 156);
 }
 
 input{
@@ -10,6 +12,7 @@ input{
     box-sizing: border-box;
     padding: 10px;
     border-color: aqua;
+    margin-bottom: 10px;
 }
 
 button{
@@ -24,4 +27,18 @@ button{
 button:hover{
 
     color: rgb(255, 255, 255);
+}
+
+ul{
+    margin-top: 12px;
+  list-style: none;
+  padding-left: 0;
+}
+
+li{
+   margin-top: 6px;
+}
+
+a{
+  color: aqua;
 }
