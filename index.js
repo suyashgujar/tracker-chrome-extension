@@ -1,5 +1,6 @@
 let myLeads = []
 let myNotes = []
+
 const inputEl = document.getElementById("input-el")
 const noteEl = document.getElementById("note-el")
 const inputBtn = document.getElementById("input-btn")
@@ -10,7 +11,7 @@ const ulEl = document.getElementById("ul-el")
 const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 const noteFromLocalStorage = JSON.parse(localStorage.getItem("myNotes"))
 
-const tabs = [{url:"www.facebook.com"}]
+
 
 
 if(leadFromLocalStorage && noteFromLocalStorage){
@@ -29,7 +30,6 @@ inputBtn.addEventListener("click" , function(){
     localStorage.setItem("myNotes" , JSON.stringify(myNotes))
     renderLeads()
 
-  
 })
 
 deleteBtn.addEventListener("dblclick" , function(){
@@ -43,13 +43,16 @@ deleteBtn.addEventListener("dblclick" , function(){
 
 tabBtn.addEventListener("click" , function(){
 
-  myLeads.push(tabs[0].url)
-  myNotes.push(noteEl.value)
-  noteEl.value = ""
-  localStorage.setItem("myLeads" , JSON.stringify(myLeads))
-  localStorage.setItem("myNotes" , JSON.stringify(myNotes))
-  renderLeads()
+  chrome.tabs.query({active: true , currentWindow: true} , function(tabs){
 
+    myLeads.push(tabs[0].url)
+    myNotes.push(noteEl.value)
+    noteEl.value = ""
+    localStorage.setItem("myLeads" , JSON.stringify(myLeads))
+    localStorage.setItem("myNotes" , JSON.stringify(myNotes))
+    renderLeads()
+
+  })
 })
 
 
